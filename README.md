@@ -8,4 +8,4 @@ This is a current work-in-progress. The goal of this project is to parse STL fil
 - [ ] Mouse view controls
 
 ## Credits
-Big thanks to [Tony Lukasavage](https://github.com/tonylukasavage/jsstl) for writing [an amazing article on STL parsing in JavaScript](http://tonylukasavage.com/blog/2013/04/10/web-based-stl-viewing-three-dot-js/).
+Many thanks to [Tony Lukasavage](https://github.com/tonylukasavage/jsstl) for writing [an amazing article on STL parsing in JavaScript](http://tonylukasavage.com/blog/2013/04/10/web-based-stl-viewing-three-dot-js/).
