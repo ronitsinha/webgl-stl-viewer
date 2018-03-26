@@ -185,15 +185,15 @@ function drawScene(gl, programInfo, buffers, deltaTime, indices) {
 
   mat4.translate(modelViewMatrix,     // destination matrix
                  modelViewMatrix,     // matrix to translate
-                 [-0.0, -10.0, -100.0]);  // amount to translate
+                 [-0.0, -10.0, -50.0]);  // amount to translate
   mat4.rotate(modelViewMatrix,  // destination matrix
               modelViewMatrix,  // matrix to rotate
               cubeRotation * .7,// amount to rotate in radians
               [0, 1, 0]);       // axis to rotate around (Y)
-   mat4.rotate(modelViewMatrix,  // destination matrix
-              modelViewMatrix,  // matrix to rotate
-              -Math.PI/2,// amount to rotate in radians
-              [1, 0, 0]);       // axis to rotate around (X)
+   // mat4.rotate(modelViewMatrix,  // destination matrix
+   //            modelViewMatrix,  // matrix to rotate
+   //            -Math.PI/2,// amount to rotate in radians
+   //            [1, 0, 0]);       // axis to rotate around (X)
 
   // Tell WebGL how to pull out the positions from the position
   // buffer into the vertexPosition attribute

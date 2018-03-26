@@ -7,6 +7,7 @@ fileInput.onchange = function(e) {
 
 fReader.onload = function (e) {
 	var geometry = readSTL (e.target.result);
+	THREE.GeometryUtils.center(geometry);
 	updateGeo (geometry);
 }
 
