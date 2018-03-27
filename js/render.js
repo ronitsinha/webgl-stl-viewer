@@ -15,9 +15,9 @@ var directionalLight = new THREE.DirectionalLight( 0xffffff );
 var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
 var mesh;
 
-camera.position.z = 80;
-camera.position.x = 5;
-camera.position.y = 10;
+camera.position.z = 50;
+camera.position.x = 0;
+camera.position.y = 0;
 
 var animate = function () {
 	if (mesh) {
