@@ -11,11 +11,22 @@ fReader.onload = function (e) {
 		indices = result[1],
 		normals = result[2];
 
+	var center_x = (max_x + min_x)/2;
+	var center_y = (max_y + min_y)/2;
+	var center_z = (max_z + min_z)/2;
+
 	// TODO: properly calculate normals
 
 	console.log (normals);
-	main (vertices, indices, normals);
+	main (vertices, indices, normals, center_x, center_y, center_z);
 }
+
+var min_x = 10000000,
+	max_x = -10000000,
+	min_y  = 10000000,
+	max_y = -10000000,
+	min_z = 10000000,
+	max_z = -10000000;
 
 function readSTL (stl) {
 	var vertices = [],
@@ -59,7 +70,25 @@ function readSTL (stl) {
 			var vertX = dv.getFloat32(offset, true);
 			var vertY = dv.getFloat32(offset+4, true);
 			var vertZ = dv.getFloat32(offset+8, true);
+
+			if (vertX > max_x) {
+				max_x = vertX;
+			} else if (vertX < min_x) {
+				min_x = vertX;
+			}
 		
+			if (vertY > max_y) {
+				max_y = vertY;
+			} else if (vertY < min_y) {
+				min_y = vertY;
+			}
+
+			if (vertZ > max_z) {
+				max_z = vertZ;
+			} else if (vertZ < min_z) {
+				min_z = vertZ;
+			}
+			
 			// Add to x, y, and z as a vertex to geometry
 			vertices.push (vertX, vertY, vertZ);
 			

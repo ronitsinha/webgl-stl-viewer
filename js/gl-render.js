@@ -3,7 +3,7 @@ var cubeRotation = 0.0;
 //
 // Start here
 //
-function main(vertices, indices, normals) {
+function main(vertices, indices, normals, center_x, center_y, center_z) {
   const canvas = document.querySelector('#glcanvas');
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
@@ -86,7 +86,7 @@ function main(vertices, indices, normals) {
     const deltaTime = now - then;
     then = now;
 
-    drawScene(gl, programInfo, buffers, deltaTime, indices);
+    drawScene(gl, programInfo, buffers, deltaTime, indices, center_x, center_y, center_z);
 
     requestAnimationFrame(render);
   }
@@ -143,7 +143,7 @@ function initBuffers(gl, vertices, indices, normals) {
 //
 // Draw the scene.
 //
-function drawScene(gl, programInfo, buffers, deltaTime, indices) {
+function drawScene(gl, programInfo, buffers, deltaTime, indices, center_x, center_y, center_z) {
   gl.clearColor(0.0, 0.0, 0.0, 1.0);  // Clear to black, fully opaque
   gl.clearDepth(1.0);                 // Clear everything
   gl.enable(gl.DEPTH_TEST);           // Enable depth testing
